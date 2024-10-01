@@ -1,0 +1,37 @@
+site_name: La bioinformatique pour les enfants - Bioinformatics for kids
+nav:
+    - Home: index.md
+    - FRANÇAIS: francais.md
+    - ENGLISH: english.md
+    - Links - Liens: links.md
+
+theme:
+  name: material
+  logo: assets/images/mouse_UMAP_2024_cropped2.jpg
+  favicon: assets/images/mouse_UMAP_2024_cropped2.jpg
+
+# Repository
+repo_name: taniawyss/bioinfo-for-kids
+repo_url: https://github.com/taniawyss/bioinfo-for-kids
+
+markdown_extensions:
+  - abbr
+  - def_list
+  - footnotes
+  - tables
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - sane_lists
+  - smarty
+  - toc
+  - pymdownx.superfences
+  - attr_list
+  - pymdownx.tabbed
+  - pymdownx.details
+#  - pymdownx.emoji:
+#      emoji_index: !!python/name:materialx.emoji.twemoji
+#      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+extra_css:
+  - stylesheets/extra.css
