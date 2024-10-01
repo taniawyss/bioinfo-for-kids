@@ -1,6 +1,6 @@
 
 <figure>
-  <img src="../assets/images/mouse_UMAP_2024_cropped2.jpg" width="800"/>
+  <img src="assets/images/mouse_UMAP_2024_cropped2.jpg" width="800"/>
 </figure>
 
 

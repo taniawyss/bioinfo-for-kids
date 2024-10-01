@@ -6,14 +6,34 @@ Avant de nous plonger dans le monde de la bioinformatique, nous devons nous penc
 des animaux par exemple, d'autres étudient comment les plantes se défendent contre les herbivores,
 alors que d'autres étudient les maladies humaines. 
 
-La bioinformatique étudie avant tout le génome des organismes vivants. Mais c'est quoi le *génome* ??
+Aussi bien que la biologie est vaste, la bioinformatique l'est tout autant. Certains bioinformaticiens et
+bioinformaticiennes étudient l'évolution des espèces, d'autres les mutations des virus (le virus qui cause 
+la COVID, ça vous rappelle
+quelque chose?), ou encore le développement de nouveaux médicaments.
+
+Une branche de la bioinformatique étudie le génome des organismes vivants. Mais c'est quoi le *génome* ??
 
 Imaginons que nous observons notre peau, par exemple, avec les yeux nus. Nous pouvons voir des petites crevasses, peut-être 
 la peau sèche, ou des grains de beauté. Si nous regardions notre peau avec un microscope, nous pourrions voir encore plus!
 Nous pourrions voir que notre peau est composée de cellules, que nous ne voyons pas à l'oeil nu. 
-Les cellules, ce sont les plus petites entités de notre corps, qui se regroupent pour former le corps des organismes vivants.
-Et pas seulement les êtres humains! Les animaux, les champignons, les plantes et même les bactéries sont
+Les cellules, ce sont les plus petites entités de notre corps, qui se regroupent pour former des organes et le corps des organismes vivants.
+Et pas seulement les êtres humains! Les animaux, les champignons, les plantes et même les bactéries, sont
 composés de cellules!
+
+Image cells and microscope
+
+Comme vous pouvez voir sur l'image de la cellule au microsope, une cellule 
+
+Si on utilise un microscope encore plus puissant: ADN
+
+Image du plus petit au plus grand: corps, cellules chromosome ADN
+
+Explication gènes
+
+Image livre de recettes, bibliothèque copie (RNA)
+
+Exemple couleurs des chats.
+
 
 
 
