@@ -15,14 +15,17 @@ Une branche de la bioinformatique étudie le génome des organismes vivants. Mai
 
 Imaginons que nous observons notre peau, par exemple, avec les yeux nus. Nous pouvons voir des petites crevasses, peut-être 
 la peau sèche, ou des grains de beauté. Si nous regardions notre peau avec un microscope, nous pourrions voir encore plus!
-Nous pourrions voir que notre peau est composée de cellules, que nous ne voyons pas à l'oeil nu. 
+Nous pourrions voir que notre peau est composée de [*cellules*](https://fr.wikipedia.org/wiki/Cellule_(biologie), que nous ne voyons pas à l'oeil nu. 
 Les cellules, ce sont les plus petites entités de notre corps, qui se regroupent pour former des organes et le corps des organismes vivants.
 Et pas seulement les êtres humains! Les animaux, les champignons, les plantes et même les bactéries, sont
 composés de cellules!
 
 Image cells and microscope
 
-Comme vous pouvez voir sur l'image de la cellule au microsope, une cellule 
+Comme vous pouvez voir sur l'image de la cellule au microsope, on trouve au centre le noyau. Le
+noyau contient le secret de fabrication et de fonctionnement d'une cellule, et donc de notre corps.
+A l'intérieur du noyau, on trouve une molécule appelée [*ADN*](https://fr.wikipedia.org/wiki/Acide_d%C3%A9soxyribonucl%C3%A9ique) (abbréviation de Acide DésoxyriboNucléique).
+L'ADN contient notre code génétique. 
 
 Si on utilise un microscope encore plus puissant: ADN
 
