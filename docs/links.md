@@ -1,6 +1,17 @@
 Here we provide some additional links
 
-## CRAN's Introduction to R book
+
+# FRANÇAIS
+
+
+Voici certains liens qui donnent plus d'information sur la bioinformatique:
+
+Texte en anglais: [Bioinformatics: Analyzing Data From Living Things](https://kids.frontiersin.org/articles/10.3389/frym.2024.1266091)
+
+
+# ENGLISH
+
+
 
 [https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf](https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf)
 
