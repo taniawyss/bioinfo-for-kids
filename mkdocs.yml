@@ -7,8 +7,8 @@ nav:
 
 theme:
   name: material
-  logo: assets/images/mouse_UMAP_2024_cropped2.jpg
-  favicon: assets/images/mouse_UMAP_2024_cropped2.jpg
+  logo: assets/images/mouse_UMAP_2024_cropped2.png
+  favicon: assets/images/mouse_UMAP_2024_cropped2.png
 
 # Repository
 repo_name: taniawyss/bioinfo-for-kids
