@@ -19,8 +19,8 @@ bioinformaticiennes étudient l'évolution des espèces animales, d'autres les m
 la COVID, ça vous rappelle
 quelque chose?), ou encore développent de nouveaux médicaments.
 
-La bioinformatique étudie très souvent l'ADN et le génome des organismes vivants. Mais c'est quoi l'**ADN** ??
-Et c'est quoi un **génome** ??
+La bioinformatique étudie très souvent l'ADN et le génome des organismes vivants. Mais c'est quoi l'**ADN** ?
+Et c'est quoi un **génome** ?
 
 ## L'ADN et le génome
 
@@ -71,8 +71,11 @@ y a de paires d'A, T, C et G par noyau de cellule humaine?
  chromosome, nous avons des phrases, ce qui correspond aux **gènes**.
  
  Un gène est donc un segment d'ADN qui contient une information particulière importante
- au fonctionnement des cellules. L'ensemble de l'ADN et des gènes d'une espèce est appelé le **génome**.
- Un exemple de gène pourrait être le gène qui détermine la couleur des poils des chats par exemple.
+ au fonctionnement des cellules ou à la définition du corps. 
+ L'ensemble de l'ADN et des gènes d'une espèce est appelé le **génome**.
+ Un exemple de gène pourrait être les gènes qui détermine la couleur des poils des chats.
+ Un autre exemple est le gène qui permet de produire l'hémoglobine dans les globules
+ rouges du sang. 
  
 
 Combien y'a t'il de gènes dans le génome humain? 
@@ -81,38 +84,47 @@ Combien y'a t'il de gènes dans le génome humain?
   	Chez l'humain, il y a environ [20'000 gènes](https://fr.wikipedia.org/wiki/G%C3%A9nome_humain).
   	En comparaison, la bactérie [_Bacillus subtilis_](https://fr.wikipedia.org/wiki/Bacillus_subtilis), que l'on trouve dans
   	le sol, contient 4'100 gènes. Le génome de la plante de [blé](https://fr.wikipedia.org/wiki/Bl%C3%A9_tendre)
-  	contient environ environ 95'000 gènes.
+  	contient environ 95'000 gènes.
   	
+
 
 --> To do: L'ADN contient notre code génétique. 
 L'ADN ne doit jamais sortir du noyau. Mais alors, comment fait la cellule pour lire et utiliser l'information gardée dans 
 l'ADN?
-Explication gènes: combien de gène chez les humains? Qu'est ce que l'expression d'un gène?
+Explication Qu'est ce que l'expression d'un gène?
 
 Image livre de recettes, bibliothèque copie (RNA)
 Comment mesurer l'expression des gènes?
 
 
-Image du plus petit au plus grand: corps, cellules chromosome ADN
-
-Le génome, c'est donc l'ensemble de l'ADN et des gènes d'une espèce!
-
-
-Exemple couleurs des chats.
-->
-
-
-
 ## La bioinformatique
 
-Machine qui lit l'ADN et l'ARN: beaucoup de données (eg pour des milliers de gènes) pour 
-beaucoup d'échantillons. Il nous faut des ordinateurs et des programmes informatiques pour lire et comprendre toutes ces données!
-On n'arriverait pas à le faire à la main!
-photo genome analyzer riponne
+Lorsque nous voulons étudier l'ADN ou l'ARN, nous avons besoin d'une machine qui permet de 
+nous donner la séquence des bases de l'ADN dans un échantillon. La première étape
+est généralement d'extraire l'ADN ou l'ARN des cellules au laboratoire pour obtenir
+uniquement l'ADN ou l'ARN voulu. La séquence des bases dans l'échantillon 
+est ensuite lue par une machine appelée un **séquenceur**. 
 
--> Todo: compléter. Exemple de données générées en bioinformatique: 
+<figure>
+  <img src="../assets/images/GA_illumina.png" width="600"/>
+  <figcaption>Cette machine est un séquenceur, le Genome Analyzer, exposé au Naturéum de Lausanne lors de l'exposition Spécimen 24</figcaption>
+</figure>
+
+Un séquenceur génére beaucoup de données! En effet, il va nous donner toute la liste
+des bases dans notre échantillon, pour les milliers de gènes du génome.
+Et si l'ADN ou l'ARN est séquencé pour plusieurs échantillons,
+ça nous donne encore plus de données! 
+
+Cela signifie que nous ne pouvons pas analyzer les données à la main. **Il nous 
+faut des ordinateurs et des programmes informatiques pour lire et comprendre 
+toutes ces données. C'est donc le travail du/de la bioinformaticien/ne!**
+
+<!--
+ Todo: complete:
+Voici des exemples de données générées en bioinformatique:   
 *    
 *  Trouver les mutations dans une tumeur.  
+-->
 
 ## Un outil utilisé en bioinformatique : R - exploration
 
@@ -124,7 +136,8 @@ beaucoup s'exercer.
 Si vous voulez apprendre à programmer, il faudra apprendre le vocabulaire du langage
 de programmation et sa syntaxe, et beaucoup s'exercer!
 
-[R](https://cran.r-project.org/) et [RStudio](https://posit.co/download/rstudio-desktop/) peuvent être installés gratuitements. Une fois les deux programmes installés,
+[R](https://cran.r-project.org/) et [RStudio](https://posit.co/download/rstudio-desktop/) peuvent être installés gratuitement.
+Une fois les deux programmes installés,
 seul RStudio devra être ouvert (il se connecte automatiquement à R).
 
 Trois fenêtres s'ouvrent par défaut dans RStudio. L'une des fenêtres correspond
@@ -301,68 +314,162 @@ ou pas dans `mon_gene`!
 
 ## Les chats ont la gingivite!
 
-Nous allons utiliser R pour explorer des gènes chez les chats.
+<figure>
+  <img src="../assets/images/evgeniya-shustikova-td3PkgUCQmc-unsplash.png" width="400"/>
+</figure>
 
-Photo dent chat:
+Il arrive que les chats souffrent de gingivite chronique. Cette maladie
+rend leurs gencives douleureuses, et les empêche de manger ou boire correctement.
+Malheureusement, les chats affecté de gingivite chronique doivent prendre des médicaments
+à vie, qui ne fonctionnent pas toujours.
+Des [chercheurs](https://www.nature.com/articles/s41598-023-40679-4#Abs1) ont recolté des échantillons 
+de gencives de chats malades de gingivite chronique, mais aussi
+de chats en bonne santé, ou de gingivite légère et passagère. Ils ont comparé comment les gènes dans les gencives 
+malades chroniquement changent comparé aux gencives saines ou légèrement malades.
+Le but est de trouver de nouveaux traitements.
+
+Nous allons utiliser R pour explorer les gènes dans des échantillons de gencives de chats ! 
+Une biologiste de laboratoire a extrait l'ARN des échantillons, et a fait mesurer la
+quantité d'ARN de chaque gène avec un [séquenceur](#la-bioinformatique). Nous allons donc travailler avec
+une table qui donne la mesure de chaque gène pour chaque échantillon. 
+
+Importer la table, trouver un gène:
+
+```r
+# import csv, find gene
+```
+
+Avec des centaines ou milliers de gènes mesurés, on a besoin d'un moyen de résumer/visualiser 
+Grâce à la quantité
+de chaque gène dans chaque échantillon, il est possible de regrouper les 
+échantillons entre eux selon leur similarité dans leur gènes. 
+
+--> To do: add link to download csv
+
+Voici les étapes nécessaires dans R:
+```r
+# import csv, plot PCA
+```
+
+<figure>
+  <img src="../assets/images/PCA_1.png" width="800"/>
+  <figcaption>Cette figure s'appelle une PCA</figcaption>
+</figure>
+
+Sur cette figure, chaque point représente un échantillon de gencive. Les points se placent
+de telle sorte que ceux qui ont des gènes similaires soient plus proches les uns des
+autres. Les points sont colorés selon leur maladie: sain, gingivite légère, ou gingivite
+chronique. La figure que nous avons créée s'appelle une PCA. 
+
+Que remarquez-vous donc? Comment sont regroupés les échantillons?
+
+??? done "Réponse"
+  	On remarque que les échantillons qui viennent d'une même maladie sont regroupés
+  	d'un côté ou de l'autre de la figure. Ceci peut nous indiquer que la gingivite
+  	est peut-être causée par des gènes qui ne sont pas présents dans la même quantité
+  	que dans la gencive saine. Il y a clairement une différence d'expression des gènes
+  	entre la gencive saine et les gingivites. 
+
+
+--> Heatmap
+Trouver quels gènes changent par maladie
+heatmap:
+
+Changer les couleurs
+
+<!--Photo dent chat:
 https://unsplash.com/photos/white-and-brown-cat-with-green-scarf-td3PkgUCQmc
 
 Chat faché:
 https://unsplash.com/photos/brown-tabby-cat-on-green-grass-during-daytime-u-xClTcaVFk
 Chat langue:
 https://unsplash.com/photos/brown-tabby-cat-on-white-textile-NvXmO9z30Oo
+-->
 
-Explorer table: trouver un gène, est il haut chez mon chat?
+### Mon chat a't-il la gingivite ?
+
+Voici **Cappuccino**, mon chat. Il a l'air fâché. Souffre-t'il de gingivite?
+
+<figure>
+  <img src="../assets/images/sandy-millar-u-xClTcaVFk-unsplash.png" width="400"/>
+  <figcaption>Cappuccino</figcaption>
+</figure>
 
 
-Trouver quelle maladie a mon chat
-PCA: qu'est ce que c'est, comment l'utiliser.
-Avec des milliers de gènes mesurés, on a besoin d'un moyen de résumé/visualiser 
 
-Trouver quels gènes changent par maladie
-heatmap:
 
-Changer les couleurs
 
-Est-ce que les cellules de poumons de chat, tigre et canard peuvent être infecté par COVID?
+<!--Est-ce que les cellules de poumons de chat, tigre et canard peuvent être infecté par COVID?
 https://www.nature.com/articles/s41467-021-27162-2
 Cat and tiger yes, duck no. ACE2
-Capuccino mon chat a-t il la gingivite?
+-->
 
-
+<!--
 Photo de chat: 
 https://unsplash.com/photos/tan-and-black-tabby-kitten-_AHEpAdR8Xo
 
 https://unsplash.com/photos/silver-tabby-kitten-on-floor-7AIDE8PrvA0
-
+-->
 
 ## Le but final - la publication scientifique
 
-Une fois des découvertes faites et un projet de recherche acompli, on le publie.
-Les publications/articles de journaux contiennent des figures/graphiques qui permettent
+Une fois des découvertes faites et un projet de recherche accompli, on le publie dans 
+un article scientifique, couramment écrit en anglais. Un article permet
+à toute la communauté scientifique de découvrir les résultats de la recherche,
+et permet de générer de nouvelles idées et projets de recherche afin
+d'améliorer par exemple les traitments contre les maladies. L'article sur l'expression
+des gènes dans la gingivite des chats est disponible 
+[en ligne](https://www.nature.com/articles/s41598-023-40679-4#Abs1).
+
+<figure>
+  <img src="../assets/images/paper_screenshot.png" width="800"/>
+  <figcaption>Vue de l'article scientifique sur la gingivite des chats</figcaption>
+</figure>
+
+Les articles scientifiques contiennent des figures/graphiques qui permettent
 de partager les découvertes avec les lecteurs. Les graphiques doivent permettre
 de faire comprendre le message et les découvertes décrites.
 
--> Todo: Screen-shot of scientifique paper, link to article of cats.
+Le/la bioinformaticien/ne dédie du temps à créer des figures pour les inclure dans les
+articles scientifiques. Nous en avons vu
+des exemples: figures de PCA et de heatmap! 
 
-La bioinformaticienne dédie du temps à créer des figures/graphiques. Nous en avons vu
-des exemples: figures de PCA et de heatmap. 
+D'autres exemples de figures:
 
--> Eg circos plot, fancy barcode plot, cell-cell comm, UMAP of BECs used by painting mouse.
+<figure>
+  <img src="../assets/images/chord.png" width="400"/>
+</figure>
+
+<figure>
+  <img src="../assets/images/heatmap_ctl.png" width="400"/>
+</figure>
+
+<figure>
+  <img src="../assets/images/barcodePlot.png" width="400"/>
+</figure>
+
+<figure>
+  <img src="../assets/images/umap_mouse.png" width="400"/>
+  <figcaption>Oh, c'est ce que la souris a peint en page d'accueil de ce site !</figcaption>
+</figure>
+
 
 ## Compétences nécessaires pour devenir bioinformaticien ou bioinformaticienne:
 
 Un/e bioinformaticien/ne a besoin de plusieurs compétences:
 
-* Aisance avec les ordinateurs et l'informatiques.    
+* Aisance avec les ordinateurs et l'informatique.    
 * Connaissance de la biologie fondamentale.
 * Aisance avec les mathématiques.    
-* Volonté de se former continuellement et d'apprendre de nouvelles choses.  
+* Volonté de se former continuellement et d'apprendre régulièrement de nouvelles choses.  
 * Un goût pour créer des figures et graphiques.  
 * Un goût pour le travail collaboratif, car un/e bioinformaticien/ne doit interagir
 avec les personnes qui génèrent les données au laboratoire, et les directeurs de recherche
-qui interprète les données et écrivent les articles.   
+qui interprètent les données et écrivent les articles.   
 * Patience lorsque les programmes informatiques ne fonctionnent pas du premier coup ;-).  
 
+Enfin, l'inconvénient du métier, c'est le fait de travailler assis devant un ordinateur,
+ça manque un peu de mouvement.
 
 **Merci d'avoir lu jusqu'au bout !**
 
