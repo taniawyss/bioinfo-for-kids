@@ -337,6 +337,7 @@ des gènes dans des échantillons de gencives de chats !
 
 <figure>
   <img src="../assets/images/evgeniya-shustikova-td3PkgUCQmc-unsplash.png" width="400"/>
+  <figcaption>Tu bâilles? Cela t'ennuie la bioinformatique?</figcaption>
 </figure>
 
 Il arrive que les chats souffrent de gingivite chronique. Cette maladie
