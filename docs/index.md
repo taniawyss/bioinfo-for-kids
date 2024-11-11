@@ -24,5 +24,5 @@ First, what is bioinformatics? In *BIOINFORMATICS*, we find the word *BIO*, whic
 science of living organisms, and *INFORMATICS*, which describes the world of computers. Therefore, bioinformatics
 is simply the study of biology with the help of computers!
 
-To know more, jump to the [ENGLISH](francais.md) page!
+To know more, jump to the [ENGLISH](english.md) page!
 

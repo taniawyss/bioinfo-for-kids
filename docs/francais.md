@@ -1,5 +1,6 @@
+Introduction
 
-## Introduction - Biologie
+## La biologie
 
 Avant de nous plonger dans le monde de la bioinformatique, nous devons nous pencher sur la partie de la biologie qui est 
 étudiée par la bioinformatique. En effet, la biologie est un sujet très vaste. Certains biologistes étudient le comportement
@@ -17,12 +18,12 @@ Des biologistes à l'oeuvre:
 Aussi bien que la biologie est vaste, la bioinformatique l'est tout autant. Certains bioinformaticiens et
 bioinformaticiennes étudient l'évolution des espèces animales, d'autres les mutations des virus (le virus qui cause 
 la COVID, ça vous rappelle
-quelque chose?), ou encore développent de nouveaux médicaments.
+quelque chose?), ou encore aident à développer des nouveaux médicaments.
 
 La bioinformatique étudie très souvent l'ADN et le génome des organismes vivants. Mais c'est quoi l'**ADN** ?
 Et c'est quoi un **génome** ?
 
-## L'ADN et le génome
+### L'ADN et le génome
 
 Imaginons que nous observons notre peau, par exemple, avec les yeux nus. Nous pouvons voir des petites crevasses, peut-être 
 la peau sèche, ou des grains de beauté. Si nous regardions notre peau avec un microscope, nous pourrions voir encore plus!
@@ -38,14 +39,14 @@ Voici une image de cellules extraites de l'intérieur de la bouche.
 </figure>
 
 Comme vous pouvez voir sur l'image de la cellule, la zone ronde et un peu plus foncée dans chaque cellule
-est le **noyau**. Le noyau contient le secret de fabrication et de fonctionnement d'une cellule, et donc de notre corps.
+est le [**noyau**](https://fr.wikipedia.org/wiki/Noyau_(biologie). Le noyau contient le secret de fabrication et de fonctionnement d'une cellule, et donc de notre corps.
 A l'intérieur du noyau, on trouve une molécule appelée [**ADN**](https://fr.wikipedia.org/wiki/Acide_d%C3%A9soxyribonucl%C3%A9ique) (abbréviation de Acide DésoxyriboNucléique).
 L'ADN peut être imaginé comme une longue chaîne qui s'enroule, et protégée à l'intérieur du noyau. Les maillons 
 qui composent la chaîne d'ADN sont de 4 sortes. Il n'est pas important de connaître leurs noms exacts, mais
 on utilise une abréviation pour les décrire: A, T, C et G. Ces quatre molécules, aussi appelées **bases**, 
 s'attachent bout à bout et s'associent en paires pour former
 une hélice. L'ADN qui se trouve dans chaque noyau de nos cellules et donc organisé en forme d'hélice. Puis, 
-l'hélice est enroulée sous forme de **chromosomes**!
+l'hélice est enroulée sous forme de [**chromosomes**](https://fr.wikipedia.org/wiki/Chromosome!
 
 <figure>
   <img src="../assets/images/1024px-Eukaryote_DNA-fr.svg.png" width="600"/>
@@ -68,15 +69,14 @@ y a de paires d'A, T, C et G par noyau de cellule humaine?
  
  Nous pouvons imaginer l'ADN comme un livre: le texte du livre est composé d'une longue
  suite d'A, T, C et G. Le livre est organisé en chapitres, ce qui correspond aux chromosomes. Et à l'intérieur de chaque
- chromosome, nous avons des phrases, ce qui correspond aux **gènes**.
+ chromosome, nous avons des pages individuelles, ce qui correspond aux [**gènes**](https://fr.wikipedia.org/wiki/G%C3%A8ne).
  
  Un gène est donc un segment d'ADN qui contient une information particulière importante
  au fonctionnement des cellules ou à la définition du corps. 
- L'ensemble de l'ADN et des gènes d'une espèce est appelé le **génome**.
+ L'ensemble de l'ADN et des gènes d'une espèce est appelé le [**génome**](https://fr.wikipedia.org/wiki/G%C3%A9nome).
  Un exemple de gène pourrait être les gènes qui détermine la couleur des poils des chats.
  Un autre exemple est le gène qui permet de produire l'hémoglobine dans les globules
  rouges du sang. 
- 
 
 Combien y'a t'il de gènes dans le génome humain? 
 
@@ -86,21 +86,36 @@ Combien y'a t'il de gènes dans le génome humain?
   	le sol, contient 4'100 gènes. Le génome de la plante de [blé](https://fr.wikipedia.org/wiki/Bl%C3%A9_tendre)
   	contient environ 95'000 gènes.
   	
+### L'expression des gènes
 
+Comme nous l'avons dit plus haut, un gène est un segment d'ADN qui contient une information particulière importante 
+au fonctionnement des cellules ou à la définition du corps. Les gènes se trouvent sur l'ADN
+a l'intérieur du noyau, mais leur information doit généralement pouvoir sortir
+du noyau pour pouvoir jouer leur rôle. L'ADN ne sort jamais du noyau! Ce qui va sortir,
+c'est une copie des gènes, une molécule appelée [ARN](https://fr.wikipedia.org/wiki/Acide_ribonucl%C3%A9ique)!
+L'ARN est similaire à l'ADN, mais il n'a pas
+de structure en hélice, et contient des séquences des bases A, U, C et G au lieu de A, T, C et G comme
+dans l'ADN. On peut imaginer l'ARN comme étant une photocopie d'un gène, comme 
+une photocopie d'une page d'un livre qui ne peut pas sortir de la bibliothèque.
+Si la cellule a besoin de beaucoup de l'information contenue dans le gène, elle
+va créer beaucoup de copies, donc beaucoup de molécules d'ARN de ce gène. 
+Si la cellule a besoin de peu de l'information de ce gène, elle ne va pas en faire
+de copie, et donc on ne trouvera pas d'ARN de ce gène dans la cellule.
 
---> To do: L'ADN contient notre code génétique. 
-L'ADN ne doit jamais sortir du noyau. Mais alors, comment fait la cellule pour lire et utiliser l'information gardée dans 
-l'ADN?
-Explication Qu'est ce que l'expression d'un gène?
+<figure>
+  <img src="../assets/images/Gene-expression-NCBI-fr.png" width="800"/>
+</figure>
 
-Image livre de recettes, bibliothèque copie (RNA)
-Comment mesurer l'expression des gènes?
-
+Le phénomène de la création des copies des gènes en ARN s'appelle donc [**l'expression
+des gènes**](https://fr.wikipedia.org/wiki/Expression_g%C3%A9nique). Au laboratoire, 
+à l'aide de machines, il est possible de mesurer 
+précisément le nombre de copies d'ARN de chaque gène présentes dans une cellule
+ou un échantillon. 
 
 ## La bioinformatique
 
 Lorsque nous voulons étudier l'ADN ou l'ARN, nous avons besoin d'une machine qui permet de 
-nous donner la séquence des bases de l'ADN dans un échantillon. La première étape
+nous donner la séquence des bases A, T/U, C et G de l'ADN ou de l'ARN dans un échantillon. La première étape
 est généralement d'extraire l'ADN ou l'ARN des cellules au laboratoire pour obtenir
 uniquement l'ADN ou l'ARN voulu. La séquence des bases dans l'échantillon 
 est ensuite lue par une machine appelée un **séquenceur**. 
@@ -120,13 +135,12 @@ faut des ordinateurs et des programmes informatiques pour lire et comprendre
 toutes ces données. C'est donc le travail du/de la bioinformaticien/ne!**
 
 <!--
- Todo: complete:
 Voici des exemples de données générées en bioinformatique:   
 *    
 *  Trouver les mutations dans une tumeur.  
 -->
 
-## Un outil utilisé en bioinformatique : R - exploration
+### Un outil utilisé en bioinformatique : R - exploration
 
 R est un outil de programmation originalement utilisé pour faire des analyses statistiques. R s'est 
 révélé être un outil très utile également pour la bioinformatique.  
@@ -213,6 +227,9 @@ Ceci crée une 4e fenêtre:
 Maintenant que nous avons créé un script, nous allons écrire toutes les instructions
 dans le script au lieu de la Console, comme ça nous pouvons les enregister par la
 suite ou facilement les modifier.
+
+Le fichier script peut être facilement enregistré en cliquant sur le petit icône de
+disquette en haut à gauche du script, ou sur **File > Save As...**.
 
 Nous allons donc modifier les chiffres que nous avons dans `mes_chiffres`et re-calculer 
 la somme correcte. Ecrivez le texte ci-dessous dans le fichier script. Afin d'indiquer
@@ -314,6 +331,10 @@ ou pas dans `mon_gene`!
 
 ## Les chats ont la gingivite!
 
+Nous allons faire de la bioinformatique avec R pour explorer l'expression
+des gènes dans des échantillons de gencives de chats ! 
+ 
+
 <figure>
   <img src="../assets/images/evgeniya-shustikova-td3PkgUCQmc-unsplash.png" width="400"/>
 </figure>
@@ -328,27 +349,54 @@ de chats en bonne santé, ou de gingivite légère et passagère. Ils ont compar
 malades chroniquement changent comparé aux gencives saines ou légèrement malades.
 Le but est de trouver de nouveaux traitements.
 
-Nous allons utiliser R pour explorer les gènes dans des échantillons de gencives de chats ! 
 Une biologiste de laboratoire a extrait l'ARN des échantillons, et a fait mesurer la
 quantité d'ARN de chaque gène avec un [séquenceur](#la-bioinformatique). Nous allons donc travailler avec
-une table qui donne la mesure de chaque gène pour chaque échantillon. 
+une table qui donne la mesure de chaque gène pour chaque échantillon. La table peut être 
+téléchargée ci-dessous. Enregistrez la sur votre ordinateur au même endroit 
+où le fichier script que vous avez créé plus haut a été enregistré :
 
-Importer la table, trouver un gène:
+[Télécharger la table](assets/data/genes_gingivite_chats.csv){: .md-button }
+
+Pour importer la table et la garder en mémoire dans R, nous allons utiliser
+l'instruction `read.csv` précédé du symbole `<-`. Avec l'instruction `head`, 
+nous allons explorer la structure de notre table: chaque ligne correspond à un
+gène, et chaque colonne correspond à un échantillon de chat.
+Les chiffres nous donnent la quantité de chaque gène dans chaque gencive, c'est
+à dire, l'expression, le nombre de copie d'ARN par gène.
 
 ```r
-# import csv, find gene
+genes_chat <- read.csv("genes_gingivite_chats.csv", row.names = 1)
+
+head(genes_chat)
+
 ```
 
-Avec des centaines ou milliers de gènes mesurés, on a besoin d'un moyen de résumer/visualiser 
-Grâce à la quantité
-de chaque gène dans chaque échantillon, il est possible de regrouper les 
-échantillons entre eux selon leur similarité dans leur gènes. 
+Nous avons les informations d'expression pour des centaines de gènes. Nous pourrions
+regarder chaque gène un par un, et voir comment il change parmi les maladies. Mais
+cela nous prendrait beaucoup de temps. Avec des centaines ou milliers de gènes mesurés,
+nous avons besoin d'un moyen de résumer cette information par échantillon. C'est ce
+que nous allons faire avec la prochaine analyse. 
+En effet, il est possible de regrouper les 
+échantillons entre eux selon leur similarité d'expression des gènes. **Cette analyse s'appelle une
+figure de PCA**.
 
---> To do: add link to download csv
+Nous avons besoin de plusieurs instructions dans R. La première, `prcomp`, utilisée avec notre
+table de gènes `genes_chat`, est
+celle qui va faire l'analyse de PCA. Ensuite, nous allons créer la figure de PCA avec
+l'instruction `ggplot`. Avec le paramètre `colour`, nous indiquons que les échantillons
+dans notre figure de PCA doivent être colorés selon les 3 maladies. 
 
 Voici les étapes nécessaires dans R:
+
 ```r
-# import csv, plot PCA
+pca <- prcomp(t(genes_chat), scale. = TRUE, center = TRUE)$x
+pca <- as.data.frame(pca)
+
+pca$condition<-sapply(strsplit(colnames(genes_chat), "_"), '[', 2)
+
+ggplot(pca, aes(x=PC1, y=PC2, colour = condition)) +
+  geom_point() +
+  geom_text_repel(label=rownames(pca))
 ```
 
 <figure>
@@ -356,26 +404,105 @@ Voici les étapes nécessaires dans R:
   <figcaption>Cette figure s'appelle une PCA</figcaption>
 </figure>
 
-Sur cette figure, chaque point représente un échantillon de gencive. Les points se placent
-de telle sorte que ceux qui ont des gènes similaires soient plus proches les uns des
-autres. Les points sont colorés selon leur maladie: sain, gingivite légère, ou gingivite
-chronique. La figure que nous avons créée s'appelle une PCA. 
+Sur cette figure, chaque point représente un échantillon de gencive. **Les points se placent
+de telle sorte que ceux qui ont une expression des gènes similaire soient plus proches les uns des
+autres**. Les points sont colorés selon leur maladie: sain, gingivite légère, ou gingivite
+chronique.
 
 Que remarquez-vous donc? Comment sont regroupés les échantillons?
 
 ??? done "Réponse"
   	On remarque que les échantillons qui viennent d'une même maladie sont regroupés
-  	d'un côté ou de l'autre de la figure. Ceci peut nous indiquer que la gingivite
-  	est peut-être causée par des gènes qui ne sont pas présents dans la même quantité
-  	que dans la gencive saine. Il y a clairement une différence d'expression des gènes
-  	entre la gencive saine et les gingivites. 
+  	dans la figure. Ceci peut nous indiquer que la gingivite
+  	est peut-être causée par des gènes qui ont des nombres de copies différents comparé à 
+  	la gencive saine. Il y a des différences d'expression des gènes
+  	entre la gencive saine et les deux types de gingivite. 
 
+Une bioinformaticienne a fait une analyse plus détaillée des gènes qui
+changent entre la gingivite chronique et la gencive saine. Dans un génome, chaque gène
+a un numéro unique. Par exemple, le gène *ENSFCAG00000013269* a une 
+fonction dans le système immunitaire. La bioinformaticienne nous a donc transmis
+une liste de gènes qui changent dans la gingivite chronique comparé à la gencive saine.
 
---> Heatmap
-Trouver quels gènes changent par maladie
-heatmap:
+Nous allons garder en mémoire la liste de ces gènes avec le symbole `<-`. 
 
-Changer les couleurs
+```r
+genes <- c("ENSFCAG00000005637", "ENSFCAG00000045399", "ENSFCAG00000009165",
+         "ENSFCAG00000013829", "ENSFCAG00000013269" ,
+         "ENSFCAG00000015193", "ENSFCAG00000036851", "ENSFCAG00000009900",
+         "ENSFCAG00000041420", "ENSFCAG00000041248")
+```
+
+Ces gènes sont-ils plus hauts ou plus bas dans la gingivite chronique? Nous allons
+explorer cette question avec une figure appelée **heatmap** ou **carte de couleurs**.
+
+Pour cela, nous devons extraire ces gènes de la table complète `genes_chat`, en utilisant les
+symboles `[` et `]`. Puis, nous utilisons l'instruction `heatmap` qui va créer une carte 
+de couleurs pour chaque gène dans chaque échantillon. 
+
+```r
+
+diff_genes <- genes_chat[genes,]    
+
+heatmap(as.matrix(diff_genes), cexCol = 0.6, cexRow = 0.8)
+
+```
+
+Les paramètres `cexCol` et `cexRow` nous servent simplement à ajuster la taille
+du texte des colonnes et des lignes, respectivement, dans la figure. La voici:
+
+<figure>
+  <img src="../assets/images/heatmap.png" width="800"/>
+  <figcaption>Cette figure s'appelle une "heatmap" ou carte de couleurs</figcaption>
+</figure>
+
+Dans notre carte de couleurs, nous avons un gène par ligne et 
+un échantillon de gencive par colonne. Nous voyons dans le nom de chaque 
+colonne de quelle maladie vient l'échantillon. L'intensité des couleurs nous indique
+l'expression de chaque gène dans chaque échantillon. Plus la couleur est foncée et rouge,
+plus le gène est présent dans l'échantillon. Avec cette carte de couleurs, nous 
+pouvons voir que certains gènes sont plus hauts dans la gingivite chronique, alors
+que certains gènes sont plus hauts dans la gencive saine. Que ce passe t'il avec 
+ces gènes dans la gingivite légère?
+
+??? done "Réponse"
+  	Les gènes qui sont hauts dans la gingivite chronique semble lègèrement moins
+  	hauts dans la gingivite légère, mais quand même plus haut que dans la gencive
+  	saine. En plus, les gènes qui sont hauts dans la gencive saine sont bas dans la 
+  	gingivite légère, comme dans la gingivite chronique. Il semble que ces gènes ont
+  	des quantités plus similaires à la gingivite chronique, et différent de la gencive 
+  	saine.
+  	
+Maintenant, le travail du biologiste avec lequel ou laquelle la bioinformaticienne
+collabore c'est de comprendre le rôle de ces gènes, et de voir si on peut donner un
+médicament qui va cibler ces gènes et guérir les chats malades. Par exemple, le gène
+*ENSFCAG00000013269* a un rôle dans le système immunitaire. Il est plus haut chez les chats 
+avec la gingivite chronique. Est-ce que le système immunitaire est dérèglé chez ces chats?
+Peut-être est-ce la raison de leur maladie.
+
+Il est possible de jouer avec les couleurs de la carte. Essayez de changer les couleurs
+en utilisant un des paramètres suivants dans l'instruction `heatmap`:    
+
+* `terrain.colors(50)`.  
+* `rainbow(50)`.  
+* `heat.colors(50)`.  
+* `topo.colors(50)`.   
+
+* `cm.colors(50)`.   
+
+Par exemple, utilisons les couleurs de l'arc-en-ciel:
+
+```r
+
+heatmap(as.matrix(diff_genes), col=rainbow(50), cexCol=0.8, cexRow = 0.5)
+
+```
+
+<figure>
+  <img src="../assets/images/heatmap_rainbow.png" width="800"/>
+  <figcaption>Cette carte a des couleurs arc-en-ciel!</figcaption>
+</figure>
+
 
 <!--Photo dent chat:
 https://unsplash.com/photos/white-and-brown-cat-with-green-scarf-td3PkgUCQmc
@@ -395,8 +522,55 @@ Voici **Cappuccino**, mon chat. Il a l'air fâché. Souffre-t'il de gingivite?
   <figcaption>Cappuccino</figcaption>
 </figure>
 
+Afin de déterminer si mon chat a la gingivite, nous avons fait extraire l'ARN d'un petit
+morceau de sa gencive, et quantifié ses gènes au séquenceur. Nous avons
+de nouveau reçu une table avec la quantité de chaque gène dans son échantillon.
 
+[Télécharger la table des gènes de Cappuccino](assets/data/chat20_cappuccino_genes.csv){: .md-button }
 
+Une façon de déterminer si la gencive de Cappuccino est malade, c'est de comparer
+l'expression de ses gènes à celle de la gencive saine, de la gingivite légère et
+de la gingivite chronique. Rappelez-vous qu'avec la figure de PCA, il est possible
+de regrouper les échantillons selon leur similarité d'expression de gènes. Nous allons
+donc créer une figure de PCA qui contient tous les échantillons, rajouter l'échantillon
+de Cappuccino, et comparer où se place Cappuccino par rapport aux échantillons sains ou 
+malades. 
+
+La première étape est d'importer la table des gènes de Cappuccino avec l'instruction 
+`read.csv`, et de l'unir à la 
+table des gènes de tous les autres chats avec l'instruction `cbind`:
+
+```r
+cappuccino <- read.csv("chat20_cappuccino_genes.csv", row.names = 1)
+
+genes_avec_cappuccino <- cbind(genes_chat, cappuccino)
+
+```
+
+Et maintenant, nous allons créer la même figure de PCA que précédemment :
+
+```r
+pca <- prcomp(t(genes_avec_cappuccino), scale. = TRUE, center = TRUE)$x
+pca <- as.data.frame(pca)
+
+pca$condition <- sapply(strsplit(colnames(genes_avec_cappuccino), "_"), '[', 2)
+
+ggplot(pca, aes(x=PC1, y=PC2, colour = condition)) +
+  geom_point(size=2) +
+  geom_text_repel(label=rownames(pca))
+```
+
+Où dans la figure se place l'échantillon de Cappuccino? 
+Mon chat a t'il une gencive malade?
+
+??? done "Réponse"
+    <figure>
+      <img src="../assets/images/PCA_2.png" width="800"/>
+    </figure>
+  	L'échantillon de Cappuccino se place parmi les échantillons de gingivite 
+  	chronique. Ceci indique que les gènes dans sa gencive sont présentes en quantité
+  	malade. Le vétérinaire va préscrire des médicaments à Cappuccino, espérons qu'ils
+  	fonctionnent!
 
 
 <!--Est-ce que les cellules de poumons de chat, tigre et canard peuvent être infecté par COVID?
@@ -426,13 +600,13 @@ des gènes dans la gingivite des chats est disponible
   <figcaption>Vue de l'article scientifique sur la gingivite des chats</figcaption>
 </figure>
 
-Les articles scientifiques contiennent des figures/graphiques qui permettent
-de partager les découvertes avec les lecteurs. Les graphiques doivent permettre
+En plus du texte, les articles scientifiques contiennent des figures qui permettent
+de partager les découvertes avec les lecteurs. Les figures doivent permettre
 de faire comprendre le message et les découvertes décrites.
 
 Le/la bioinformaticien/ne dédie du temps à créer des figures pour les inclure dans les
 articles scientifiques. Nous en avons vu
-des exemples: figures de PCA et de heatmap! 
+des exemples: la figure de PCA et la carte de couleurs ! 
 
 D'autres exemples de figures:
 
@@ -462,7 +636,7 @@ Un/e bioinformaticien/ne a besoin de plusieurs compétences:
 * Connaissance de la biologie fondamentale.
 * Aisance avec les mathématiques.    
 * Volonté de se former continuellement et d'apprendre régulièrement de nouvelles choses.  
-* Un goût pour créer des figures et graphiques.  
+* Un goût pour créer des figures.  
 * Un goût pour le travail collaboratif, car un/e bioinformaticien/ne doit interagir
 avec les personnes qui génèrent les données au laboratoire, et les directeurs de recherche
 qui interprètent les données et écrivent les articles.   
@@ -472,17 +646,4 @@ Enfin, l'inconvénient du métier, c'est le fait de travailler assis devant un o
 ça manque un peu de mouvement.
 
 **Merci d'avoir lu jusqu'au bout !**
-
-
-<!--
-## Feedback
--->
-
-
-
-
-
-
-
-
 
