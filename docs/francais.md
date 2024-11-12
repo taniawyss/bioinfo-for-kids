@@ -4,7 +4,7 @@ Introduction
 
 Avant de nous plonger dans le monde de la bioinformatique, nous devons nous pencher sur la partie de la biologie qui est 
 étudiée par la bioinformatique. En effet, la biologie est un sujet très vaste. Certains biologistes étudient le comportement
-des animaux par exemple, d'autres étudient comment les plantes se défendent contre les herbivores,
+des animaux, par exemple, d'autres étudient comment les plantes se défendent contre les herbivores,
 alors que d'autres étudient les maladies humaines. 
 
 Des biologistes à l'oeuvre:
@@ -18,7 +18,7 @@ Des biologistes à l'oeuvre:
 Aussi bien que la biologie est vaste, la bioinformatique l'est tout autant. Certains bioinformaticiens et
 bioinformaticiennes étudient l'évolution des espèces animales, d'autres les mutations des virus (le virus qui cause 
 la COVID, ça vous rappelle
-quelque chose?), ou encore aident à développer des nouveaux médicaments.
+quelque chose ?), ou encore aident à développer de nouveaux médicaments.
 
 La bioinformatique étudie très souvent l'ADN et le génome des organismes vivants. Mais c'est quoi l'**ADN** ?
 Et c'est quoi un **génome** ?
@@ -211,7 +211,7 @@ Avec ce petit exercice de somme, on peut vite voir l'avantage de R. Si par exemp
 fait une erreur dans la liste de chiffres et que en fait nous voulions inclure 24 au lieu de 
 23, nous pourrions facilement corriger l'élément `mes_chiffres` et refaire la somme.
 
-Avant de faire ceci, nous allons créé un fichier script. Un fichier script
+Avant de faire ceci, nous allons créer un fichier script. Un fichier script
 nous permet d'écrire toutes les instructions que nous voulons donner à R, et de les 
 enregistrer, pour facilement les modifier, ou pour nous souvenir dans quelques mois des
 instructions que nous avons utilisées aujourd'hui.
@@ -334,10 +334,9 @@ ou pas dans `mon_gene`!
 Nous allons faire de la bioinformatique avec R pour explorer l'expression
 des gènes dans des échantillons de gencives de chats ! 
  
-
 <figure>
   <img src="../assets/images/evgeniya-shustikova-td3PkgUCQmc-unsplash.png" width="400"/>
-  <figcaption>Tu bâilles? Cela t'ennuie la bioinformatique?</figcaption>
+  <figcaption>Tu bâilles?! La bioinformatique t'ennuie ?</figcaption>
 </figure>
 
 Il arrive que les chats souffrent de gingivite chronique. Cette maladie
@@ -379,13 +378,31 @@ nous avons besoin d'un moyen de résumer cette information par échantillon. C'e
 que nous allons faire avec la prochaine analyse. 
 En effet, il est possible de regrouper les 
 échantillons entre eux selon leur similarité d'expression des gènes. **Cette analyse s'appelle une
-figure de PCA**.
+figure d'ACP**.
 
-Nous avons besoin de plusieurs instructions dans R. La première, `prcomp`, utilisée avec notre
+
+!!! warning
+    Petite parenthèse technique... Il est nécessaire d'installer séparément certaines instructions dans R. Afin
+    de pouvoir continuer avec les exercices qui suivent, veuillez installer ces instructions.
+    Il vous suffit d'écrire ces 4 lignes dans votre fichier script et de cliquer sur le bouton "Run"
+    pour chaque ligne comme pour une instruction standard.
+    Assurez-vous d'être connecté à Internet pour que les instructions puissent être installées.
+    Ne vous inquiétez pas si vous voyez des messages en rouge sur la console, c'est juste
+    une information liée au téléchargement.
+    ```r
+    install.packages("ggplot2")
+    install.packages("ggrepel")
+    
+    library(ggplot2)
+    library(ggrepel)
+    ```
+
+
+Pour l'ACP, nous avons donc besoin de plusieurs instructions dans R. La première, `prcomp`, utilisée avec notre
 table de gènes `genes_chat`, est
-celle qui va faire l'analyse de PCA. Ensuite, nous allons créer la figure de PCA avec
+celle qui va faire l'analyse ACP. Ensuite, nous allons créer la figure d'ACP avec
 l'instruction `ggplot`. Avec le paramètre `colour`, nous indiquons que les échantillons
-dans notre figure de PCA doivent être colorés selon les 3 maladies. 
+dans notre figure d'ACP doivent être colorés selon les 3 maladies. 
 
 Voici les étapes nécessaires dans R:
 
@@ -402,7 +419,7 @@ ggplot(pca, aes(x=PC1, y=PC2, colour = condition)) +
 
 <figure>
   <img src="../assets/images/PCA_1.png" width="800"/>
-  <figcaption>Cette figure s'appelle une PCA</figcaption>
+  <figcaption>Cette figure s'appelle une ACP</figcaption>
 </figure>
 
 Sur cette figure, chaque point représente un échantillon de gencive. **Les points se placent
@@ -531,9 +548,9 @@ de nouveau reçu une table avec la quantité de chaque gène dans son échantill
 
 Une façon de déterminer si la gencive de Cappuccino est malade, c'est de comparer
 l'expression de ses gènes à celle de la gencive saine, de la gingivite légère et
-de la gingivite chronique. Rappelez-vous qu'avec la figure de PCA, il est possible
+de la gingivite chronique. Rappelez-vous qu'avec la figure d'ACP, il est possible
 de regrouper les échantillons selon leur similarité d'expression de gènes. Nous allons
-donc créer une figure de PCA qui contient tous les échantillons, rajouter l'échantillon
+donc créer une figure d'ACP qui contient tous les échantillons, rajouter l'échantillon
 de Cappuccino, et comparer où se place Cappuccino par rapport aux échantillons sains ou 
 malades. 
 
@@ -548,7 +565,8 @@ genes_avec_cappuccino <- cbind(genes_chat, cappuccino)
 
 ```
 
-Et maintenant, nous allons créer la même figure de PCA que précédemment :
+Et maintenant, nous allons créer la même figure d'ACP que précédemment, mais avec
+Cappuccino inclus :
 
 ```r
 pca <- prcomp(t(genes_avec_cappuccino), scale. = TRUE, center = TRUE)$x
@@ -569,7 +587,7 @@ Mon chat a t'il une gencive malade?
       <img src="../assets/images/PCA_2.png" width="800"/>
     </figure>
   	L'échantillon de Cappuccino se place parmi les échantillons de gingivite 
-  	chronique. Ceci indique que les gènes dans sa gencive sont présentes en quantité
+  	chronique. Ceci indique que les gènes dans sa gencive sont présents en quantité
   	malade. Le vétérinaire va préscrire des médicaments à Cappuccino, espérons qu'ils
   	fonctionnent!
 
@@ -607,7 +625,7 @@ de faire comprendre le message et les découvertes décrites.
 
 Le/la bioinformaticien/ne dédie du temps à créer des figures pour les inclure dans les
 articles scientifiques. Nous en avons vu
-des exemples: la figure de PCA et la carte de couleurs ! 
+des exemples: la figure d'ACP et la carte de couleurs ! 
 
 D'autres exemples de figures:
 
