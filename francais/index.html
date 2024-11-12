@@ -624,7 +624,7 @@
 <h2 id="la-biologie">La biologie</h2>
 <p>Avant de nous plonger dans le monde de la bioinformatique, nous devons nous pencher sur la partie de la biologie qui est 
 étudiée par la bioinformatique. En effet, la biologie est un sujet très vaste. Certains biologistes étudient le comportement
-des animaux par exemple, d&rsquo;autres étudient comment les plantes se défendent contre les herbivores,
+des animaux, par exemple, d&rsquo;autres étudient comment les plantes se défendent contre les herbivores,
 alors que d&rsquo;autres étudient les maladies humaines. </p>
 <p>Des biologistes à l&rsquo;oeuvre:</p>
 <figure>
@@ -635,7 +635,7 @@ alors que d&rsquo;autres étudient les maladies humaines. </p>
 <p>Aussi bien que la biologie est vaste, la bioinformatique l&rsquo;est tout autant. Certains bioinformaticiens et
 bioinformaticiennes étudient l&rsquo;évolution des espèces animales, d&rsquo;autres les mutations des virus (le virus qui cause 
 la COVID, ça vous rappelle
-quelque chose?), ou encore aident à développer des nouveaux médicaments.</p>
+quelque chose ?), ou encore aident à développer de nouveaux médicaments.</p>
 <p>La bioinformatique étudie très souvent l&rsquo;ADN et le génome des organismes vivants. Mais c&rsquo;est quoi l&rsquo;<strong>ADN</strong> ?
 Et c&rsquo;est quoi un <strong>génome</strong> ?</p>
 <h3 id="ladn-et-le-genome">L&rsquo;ADN et le génome</h3>
@@ -788,7 +788,7 @@ toujours en tapant dans la console suivi de Enter (sum = somme en anglais):</p>
 <p>Avec ce petit exercice de somme, on peut vite voir l&rsquo;avantage de R. Si par exemple nous avons
 fait une erreur dans la liste de chiffres et que en fait nous voulions inclure 24 au lieu de 
 23, nous pourrions facilement corriger l&rsquo;élément <code>mes_chiffres</code> et refaire la somme.</p>
-<p>Avant de faire ceci, nous allons créé un fichier script. Un fichier script
+<p>Avant de faire ceci, nous allons créer un fichier script. Un fichier script
 nous permet d&rsquo;écrire toutes les instructions que nous voulons donner à R, et de les 
 enregistrer, pour facilement les modifier, ou pour nous souvenir dans quelques mois des
 instructions que nous avons utilisées aujourd&rsquo;hui.</p>
@@ -875,7 +875,7 @@ ou pas dans <code>mon_gene</code>!</p>
 des gènes dans des échantillons de gencives de chats ! </p>
 <figure>
   <img src="../assets/images/evgeniya-shustikova-td3PkgUCQmc-unsplash.png" width="400"/>
-  <figcaption>Tu bâilles? Cela t'ennuie la bioinformatique?</figcaption>
+  <figcaption>Tu bâilles?! La bioinformatique t'ennuie ?</figcaption>
 </figure>
 
 <p>Il arrive que les chats souffrent de gingivite chronique. Cette maladie
@@ -910,12 +910,28 @@ nous avons besoin d&rsquo;un moyen de résumer cette information par échantillo
 que nous allons faire avec la prochaine analyse. 
 En effet, il est possible de regrouper les 
 échantillons entre eux selon leur similarité d&rsquo;expression des gènes. <strong>Cette analyse s&rsquo;appelle une
-figure de PCA</strong>.</p>
-<p>Nous avons besoin de plusieurs instructions dans R. La première, <code>prcomp</code>, utilisée avec notre
+figure d&rsquo;ACP</strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Petite parenthèse technique&hellip; Il est nécessaire d&rsquo;installer séparément certaines instructions dans R. Afin
+de pouvoir continuer avec les exercices qui suivent, veuillez installer ces instructions.
+Il vous suffit d&rsquo;écrire ces 4 lignes dans votre fichier script et de cliquer sur le bouton &ldquo;Run&rdquo;
+pour chaque ligne comme pour une instruction standard.
+Assurez-vous d&rsquo;être connecté à Internet pour que les instructions puissent être installées.
+Ne vous inquiétez pas si vous voyez des messages en rouge sur la console, c&rsquo;est juste
+une information liée au téléchargement.
+<div class="highlight"><pre><span></span><code><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;ggplot2&quot;</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;ggrepel&quot;</span><span class="p">)</span>
+
+<span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ggrepel</span><span class="p">)</span>
+</code></pre></div></p>
+</div>
+<p>Pour l&rsquo;ACP, nous avons donc besoin de plusieurs instructions dans R. La première, <code>prcomp</code>, utilisée avec notre
 table de gènes <code>genes_chat</code>, est
-celle qui va faire l&rsquo;analyse de PCA. Ensuite, nous allons créer la figure de PCA avec
+celle qui va faire l&rsquo;analyse ACP. Ensuite, nous allons créer la figure d&rsquo;ACP avec
 l&rsquo;instruction <code>ggplot</code>. Avec le paramètre <code>colour</code>, nous indiquons que les échantillons
-dans notre figure de PCA doivent être colorés selon les 3 maladies. </p>
+dans notre figure d&rsquo;ACP doivent être colorés selon les 3 maladies. </p>
 <p>Voici les étapes nécessaires dans R:</p>
 <div class="highlight"><pre><span></span><code><span class="n">pca</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">prcomp</span><span class="p">(</span><span class="nf">t</span><span class="p">(</span><span class="n">genes_chat</span><span class="p">),</span><span class="w"> </span><span class="n">scale.</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">center</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="o">$</span><span class="n">x</span>
 <span class="n">pca</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.data.frame</span><span class="p">(</span><span class="n">pca</span><span class="p">)</span>
@@ -928,7 +944,7 @@ dans notre figure de PCA doivent être colorés selon les 3 maladies. </p>
 </code></pre></div>
 <figure>
   <img src="../assets/images/PCA_1.png" width="800"/>
-  <figcaption>Cette figure s'appelle une PCA</figcaption>
+  <figcaption>Cette figure s'appelle une ACP</figcaption>
 </figure>
 
 <p>Sur cette figure, chaque point représente un échantillon de gencive. <strong>Les points se placent
@@ -1037,9 +1053,9 @@ de nouveau reçu une table avec la quantité de chaque gène dans son échantill
 <p><a class="md-button" href="../assets/data/chat20_cappuccino_genes.csv">Télécharger la table des gènes de Cappuccino</a></p>
 <p>Une façon de déterminer si la gencive de Cappuccino est malade, c&rsquo;est de comparer
 l&rsquo;expression de ses gènes à celle de la gencive saine, de la gingivite légère et
-de la gingivite chronique. Rappelez-vous qu&rsquo;avec la figure de PCA, il est possible
+de la gingivite chronique. Rappelez-vous qu&rsquo;avec la figure d&rsquo;ACP, il est possible
 de regrouper les échantillons selon leur similarité d&rsquo;expression de gènes. Nous allons
-donc créer une figure de PCA qui contient tous les échantillons, rajouter l&rsquo;échantillon
+donc créer une figure d&rsquo;ACP qui contient tous les échantillons, rajouter l&rsquo;échantillon
 de Cappuccino, et comparer où se place Cappuccino par rapport aux échantillons sains ou 
 malades. </p>
 <p>La première étape est d&rsquo;importer la table des gènes de Cappuccino avec l&rsquo;instruction 
@@ -1049,7 +1065,8 @@ table des gènes de tous les autres chats avec l&rsquo;instruction <code>cbind</
 
 <span class="n">genes_avec_cappuccino</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cbind</span><span class="p">(</span><span class="n">genes_chat</span><span class="p">,</span><span class="w"> </span><span class="n">cappuccino</span><span class="p">)</span>
 </code></pre></div>
-<p>Et maintenant, nous allons créer la même figure de PCA que précédemment :</p>
+<p>Et maintenant, nous allons créer la même figure d&rsquo;ACP que précédemment, mais avec
+Cappuccino inclus :</p>
 <div class="highlight"><pre><span></span><code><span class="n">pca</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">prcomp</span><span class="p">(</span><span class="nf">t</span><span class="p">(</span><span class="n">genes_avec_cappuccino</span><span class="p">),</span><span class="w"> </span><span class="n">scale.</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">center</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="o">$</span><span class="n">x</span>
 <span class="n">pca</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.data.frame</span><span class="p">(</span><span class="n">pca</span><span class="p">)</span>
 
@@ -1067,7 +1084,7 @@ Mon chat a t&rsquo;il une gencive malade?</p>
   <img src="../assets/images/PCA_2.png" width="800"/>
 </figure>
 L&rsquo;échantillon de Cappuccino se place parmi les échantillons de gingivite 
-chronique. Ceci indique que les gènes dans sa gencive sont présentes en quantité
+chronique. Ceci indique que les gènes dans sa gencive sont présents en quantité
 malade. Le vétérinaire va préscrire des médicaments à Cappuccino, espérons qu&rsquo;ils
 fonctionnent!</p>
 </details>
@@ -1101,7 +1118,7 @@ de partager les découvertes avec les lecteurs. Les figures doivent permettre
 de faire comprendre le message et les découvertes décrites.</p>
 <p>Le/la bioinformaticien/ne dédie du temps à créer des figures pour les inclure dans les
 articles scientifiques. Nous en avons vu
-des exemples: la figure de PCA et la carte de couleurs ! </p>
+des exemples: la figure d&rsquo;ACP et la carte de couleurs ! </p>
 <p>D&rsquo;autres exemples de figures:</p>
 <figure>
   <img src="../assets/images/chord.png" width="400"/>
