@@ -17,21 +17,17 @@ mes_chiffres <- c(1, 3, 5, 6, 7, 16, 23, 25, 28)
 # Nous allons faire la somme de tous les éléments dans mes_chiffres:
 sum(mes_chiffres)
 
-# Nous allons remplacer 23 par 24 et refaire la somme:
-mes_chiffres <- c(1, 3, 5, 6, 7, 16, 24, 25, 28)
+# On peut complétement remplacer les chiffres:
+mes_chiffres <- c(6, 67, 59, 663, 7, 16, 24, 25, 28)
 # L'instruction pour faire la somme est la même!
 sum(mes_chiffres)
 
-# On peut complétement remplacer les chiffres:
-mes_chiffres <- c(57, 46, 1, 23, 56, 27, 5, 17, 18, 19)
-sum(mes_chiffres)
-
 # Une autre instruction pour R: imprimer un texte:
-texte <- "Bonjour la planète! Moi, c'est Tania"
+texte <- "Bonjour la planète! Moi, c'est Anastasia"
 print(texte)
 
 # Mon premier programme: imprimer une salutation pour chaque participant:
-prenom <- c("Tania", "Marguerite", "Rose", "Celia")
+prenom <- c("Anastasia", "Sasha", "Abigaelle")
 
 # On utilise une boucle qui reproduit la même salutation pour 
 # chaque prénom:
@@ -40,12 +36,12 @@ for (i in 1:length(prenom)) {
 }
 
 # Trouver 3 bases d'ADN dans un gène:
-mon_gene <- "ATTCGGTATCCTAGTCATCG"
+mon_adn <- "ATTCGGTATCCTAGTCATCG"
 a_chercher <- "TAT"
 # L'instruction grep permet de trouver des lettres dans un mélange
 # de lettres plus long. Si la réponse =1, les lettres sont présentes.
 # Si la réponse = integer(0), les lettres ne sont pas présentes.
-grep(a_chercher, mon_gene)
+grep(a_chercher, mon_adn)
 
 
 ## Les chats ont la gingivite !
@@ -75,13 +71,32 @@ ggplot(pca, aes(x=PC1, y=PC2, colour = condition)) +
   geom_point() +
   geom_text_repel(label=rownames(pca))
 
+## Cappuccino
+# Importer la table des gènes de Cappuccino:
+cappuccino <- read.csv("chat20_cappuccino_genes.csv", row.names = 1)
+
+# Combiner les gènes de Cappuccino avec les gènes des autres chats:
+genes_avec_cappuccino <- cbind(genes_chat, cappuccino)
+
+pca <- prcomp(t(genes_avec_cappuccino), scale. = TRUE, center = TRUE)$x
+pca <- as.data.frame(pca)
+
+pca$condition <- sapply(strsplit(colnames(genes_avec_cappuccino), "_"), '[', 2)
+
+ggplot(pca, aes(x=PC1, y=PC2, colour = condition)) +
+  geom_point(size=2) +
+  geom_text_repel(label=rownames(pca))
+
+# Mon chat Cappuccino a't-il la gingivite? Devra t'il prendre
+# des médicaments?!
+
 # Heatmap: carte de couleurs
 # Des gènes qui sont différents entre la gingivite chronique et la
 # gencive saine:
 genes <- c("ENSFCAG00000005637", "ENSFCAG00000045399", "ENSFCAG00000009165",
-         "ENSFCAG00000013829", "ENSFCAG00000013269" ,
-         "ENSFCAG00000015193", "ENSFCAG00000036851", "ENSFCAG00000009900",
-         "ENSFCAG00000041420", "ENSFCAG00000041248")
+           "ENSFCAG00000013829", "ENSFCAG00000013269" ,
+           "ENSFCAG00000015193", "ENSFCAG00000036851", "ENSFCAG00000009900",
+           "ENSFCAG00000041420", "ENSFCAG00000041248")
 
 # Extraire ces gènes de la table
 diff_genes <- genes_chat[genes,]    
@@ -104,23 +119,4 @@ heatmap(as.matrix(diff_genes), col=heat.colors(50), cexCol=0.8, cexRow = 0.5)
 # collabore c'est de comprendre le rôle des gènes et voir si on peut donner 
 # un médicament aux chats malades.
 # Eg ENSFCAG00000013269 = CSF3R, gène du système immunitaire
-
-## Cappuccino
-# Importer la table des gènes de Cappuccino:
-cappuccino <- read.csv("chat20_cappuccino_genes.csv", row.names = 1)
-
-# Combiner les gènes de Cappuccino avec les gènes des autres chats:
-genes_avec_cappuccino <- cbind(genes_chat, cappuccino)
-
-pca <- prcomp(t(genes_avec_cappuccino), scale. = TRUE, center = TRUE)$x
-pca <- as.data.frame(pca)
-
-pca$condition <- sapply(strsplit(colnames(genes_avec_cappuccino), "_"), '[', 2)
-
-ggplot(pca, aes(x=PC1, y=PC2, colour = condition)) +
-  geom_point(size=2) +
-  geom_text_repel(label=rownames(pca))
-
-# Oh non, mon chat Cappuccino a la gingivite chronique! Il devra prendre
-# ses médicaments!
 

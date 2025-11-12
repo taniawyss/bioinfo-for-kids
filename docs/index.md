@@ -7,7 +7,7 @@
 
 ## FRANÇAIS
 
-Bienvenue sur la page qui t'en apprend un peu plus sur la bioinformatique!
+Bienvenue sur la page qui vous en apprend un peu plus sur la bioinformatique!
 
 D'abord, la bioinformatique, qu'est ce que c'est? Dans *BIOINFORMATIQUE*, on a le mot *BIO*, qui se 
 réfère à la biologie, la science du vivant, et le mot *INFORMATIQUE*, qui décrit le monde des ordinateurs. Donc, la bioinformatique, 
