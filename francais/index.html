@@ -361,6 +361,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ou-est-passe-le-rouge-gorge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Où est passé le rouge-gorge?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#les-chats-ont-la-gingivite" class="md-nav__link">
     <span class="md-ellipsis">
       Les chats ont la gingivite!
@@ -555,6 +564,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ou-est-passe-le-rouge-gorge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Où est passé le rouge-gorge?
+    </span>
+  </a>
   
 </li>
       
@@ -870,12 +888,68 @@ Si la console indique <code>integer(0)</code>, les bases dans <code>a_chercher</
 présentes dans <code>mon_gene</code>.</p>
 <p>Libre à vous de changer les bases dans <code>a_chercher</code> et de voir si elles sont présentes 
 ou pas dans <code>mon_gene</code>!</p>
+<h2 id="ou-est-passe-le-rouge-gorge">Où est passé le rouge-gorge?</h2>
+<p>Maintenant que nous savons créer des boucles dans R, et que nous savons chercher une séquence de 
+base d&rsquo;ADN, nous allons jouer aux détectives!</p>
+<p>Un rouge-gorge vivait dans mon jardin, et je le voyais tous les jours. Mais voici 
+quelques jours que je ne le vois plus. Le jour de sa disparition, j&rsquo;ai trouvé des poils de chat
+blancs dans mon jardin. J&rsquo;aimerais savoir à quels chats qui se promènent
+régulièrement dans mon jardin ils appartiennent.</p>
+<figure>
+  <img src="../assets/images/alessandro-prato-jEwzGBQWTnA-unsplash.jpg" width="400"/>
+  <figcaption>Où est passé le rouge-gorge de mon jardin ?</figcaption>
+</figure>
+
+<p>En analysant les traces d&rsquo;ADN qu&rsquo;on trouve sur les poils, j&rsquo;ai obtenu une séquence d&rsquo;ADN des poils. 
+Je la compare avec l&rsquo;ADN de chacun des chats du voisinage:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Tigri</th>
+<th style="text-align: center;">Bianca</th>
+<th style="text-align: left;">Biscotte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><img src="../assets/images/victor-g-ycKAscJ_cTY-unsplash.jpg" width="200"/></td>
+<td style="text-align: center;"><img src="../assets/images/heather-doty-VGAus9QHai4-unsplash.jpg" width="200"/></td>
+<td style="text-align: left;"><img src="../assets/images/jbc-vvY5w49SQpM-unsplash.jpg" width="200"/></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="c1"># Après avoir analysé l&#39;ADN sur les poils retrouvés, </span>
+<span class="c1"># la séquence d&#39;ADN que nous avons trouvée est GTATACT. </span>
+<span class="c1"># Nous la mettons dans l&#39;élément indice:</span>
+
+<span class="n">indice</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;GTATACT&quot;</span>
+
+<span class="c1"># On obtient l&#39;ADN des chats suspects, et on utilise un boucle qui nous permet de chercher</span>
+<span class="c1"># la séquence courte de l&#39;indice dans les séquences longues des chats, et</span>
+<span class="c1"># d&#39;imprimer un texte si l&#39;indice est trouvé dans la séquence du chat. </span>
+<span class="n">suspects</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">Tigri</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;GGCATCCGATTAGGCATCCGATTAGGCATCCGATTAGGCATCCGATTAGGCATCCGATTA&quot;</span><span class="p">,</span>
+<span class="w">              </span><span class="n">Bianca</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ATTCGGTATCCTAGATTCGGTATCCTAGATTCGGTATACTAGATTCGGTATCCTAG&quot;</span><span class="p">,</span>
+<span class="w">              </span><span class="n">Biscotte</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;CCTAGAGGTAACCCTAGAGGTAACCCTAGAGGTAACCCTAGAGGTAACCCTAGAGGTAACCCTAGAGGTAAC&quot;</span><span class="p">)</span>
+
+<span class="nf">for </span><span class="p">(</span><span class="n">nom</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="nf">names</span><span class="p">(</span><span class="n">suspects</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nf">if </span><span class="p">(</span><span class="nf">grepl</span><span class="p">(</span><span class="n">indice</span><span class="p">,</span><span class="w"> </span><span class="n">suspects</span><span class="p">[</span><span class="n">nom</span><span class="p">]))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Les poils sont à&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;!&quot;</span><span class="p">))</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Les poils ne sont pas à&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">nom</span><span class="p">))</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<details class="done">
+<summary>Réponse</summary>
+<p>Il semble que Bianca ait laissé des poils dans mon jardin le jour de la disparition du
+rouge-gorge!</p>
+</details>
 <h2 id="les-chats-ont-la-gingivite">Les chats ont la gingivite!</h2>
 <p>Nous allons faire de la bioinformatique avec R pour explorer l&rsquo;expression
 des gènes dans des échantillons de gencives de chats ! </p>
 <figure>
   <img src="../assets/images/evgeniya-shustikova-td3PkgUCQmc-unsplash.png" width="400"/>
-  <figcaption>Tu bâilles?! La bioinformatique t'ennuie ?</figcaption>
+  <figcaption>Tu bâilles ou tu as mal aux dents ?</figcaption>
 </figure>
 
 <p>Il arrive que les chats souffrent de gingivite chronique. Cette maladie
@@ -1011,17 +1085,15 @@ médicament qui va cibler ces gènes et guérir les chats malades. Par exemple, 
 avec la gingivite chronique. Est-ce que le système immunitaire est dérèglé chez ces chats?
 Peut-être est-ce la raison de leur maladie.</p>
 <p>Il est possible de jouer avec les couleurs de la carte. Essayez de changer les couleurs
-en utilisant un des paramètres suivants dans l&rsquo;instruction <code>heatmap</code>:    </p>
+en utilisant un des paramètres suivants dans l&rsquo;instruction <code>heatmap</code>, 
+en remplaçant <code>rainbow(50)</code> en une autre des options suivantes:    </p>
 <ul>
-<li><code>terrain.colors(50)</code>.  </li>
 <li><code>rainbow(50)</code>.  </li>
+<li><code>terrain.colors(50)</code>.  </li>
 <li><code>heat.colors(50)</code>.  </li>
-<li>
-<p><code>topo.colors(50)</code>.   </p>
-</li>
-<li>
-<p><code>cm.colors(50)</code>.   </p>
-</li>
+<li><code>topo.colors(50)</code>.   </li>
+<li><code>cm.colors(50)</code>.   </li>
+<li><code>hcl.colors(50)</code>.   </li>
 </ul>
 <p>Par exemple, utilisons les couleurs de l&rsquo;arc-en-ciel:</p>
 <div class="highlight"><pre><span></span><code><span class="nf">heatmap</span><span class="p">(</span><span class="nf">as.matrix</span><span class="p">(</span><span class="n">diff_genes</span><span class="p">),</span><span class="w"> </span><span class="n">col</span><span class="o">=</span><span class="nf">rainbow</span><span class="p">(</span><span class="m">50</span><span class="p">),</span><span class="w"> </span><span class="n">cexCol</span><span class="o">=</span><span class="m">0.8</span><span class="p">,</span><span class="w"> </span><span class="n">cexRow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">)</span>
