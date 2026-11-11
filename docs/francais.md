@@ -329,6 +329,58 @@ présentes dans `mon_gene`.
 Libre à vous de changer les bases dans `a_chercher` et de voir si elles sont présentes 
 ou pas dans `mon_gene`!
 
+## Où est passé le rouge-gorge?
+
+Maintenant que nous savons créer des boucles dans R, et que nous savons chercher une séquence de 
+base d'ADN, nous allons jouer aux détectives!
+
+Un rouge-gorge vivait dans mon jardin, et je le voyais tous les jours. Mais voici 
+quelques jours que je ne le vois plus. Le jour de sa disparition, j'ai trouvé des poils de chat
+blancs dans mon jardin. J'aimerais savoir à quels chats qui se promènent
+régulièrement dans mon jardin ils appartiennent.
+
+<figure>
+  <img src="../assets/images/alessandro-prato-jEwzGBQWTnA-unsplash.jpg" width="400"/>
+  <figcaption>Où est passé le rouge-gorge de mon jardin ?</figcaption>
+</figure>
+
+En analysant les traces d'ADN qu'on trouve sur les poils, j'ai obtenu une séquence d'ADN des poils. 
+Je la compare avec l'ADN de chacun des chats du voisinage:
+
+Tigri     |  Bianca   |      Biscotte |
+:-------------------------:|:-------------------------:|:-------------------------|
+  <img src="../assets/images/victor-g-ycKAscJ_cTY-unsplash.jpg" width="200"/> |  <img src="../assets/images/heather-doty-VGAus9QHai4-unsplash.jpg" width="200"/> | <img src="../assets/images/jbc-vvY5w49SQpM-unsplash.jpg" width="200"/> |
+
+```r
+
+# Après avoir analysé l'ADN sur les poils retrouvés, 
+# la séquence d'ADN que nous avons trouvée est GTATACT. 
+# Nous la mettons dans l'élément indice:
+
+indice <- "GTATACT"
+
+# On obtient l'ADN des chats suspects, et on utilise un boucle qui nous permet de chercher
+# la séquence courte de l'indice dans les séquences longues des chats, et
+# d'imprimer un texte si l'indice est trouvé dans la séquence du chat. 
+suspects <- c(Tigri  = "GGCATCCGATTAGGCATCCGATTAGGCATCCGATTAGGCATCCGATTAGGCATCCGATTA",
+              Bianca = "ATTCGGTATCCTAGATTCGGTATCCTAGATTCGGTATACTAGATTCGGTATCCTAG",
+              Biscotte   = "CCTAGAGGTAACCCTAGAGGTAACCCTAGAGGTAACCCTAGAGGTAACCCTAGAGGTAACCCTAGAGGTAAC")
+
+for (nom in names(suspects)) {
+  if (grepl(indice, suspects[nom])) {
+    print(paste("Les poils sont à", nom, "!"))
+  } else {
+    print(paste("Les poils ne sont pas à", nom))
+  }
+}
+
+```
+
+??? done "Réponse"
+  	Il semble que Bianca ait laissé des poils dans mon jardin le jour de la disparition du
+  	rouge-gorge!
+
+
 ## Les chats ont la gingivite!
 
 Nous allons faire de la bioinformatique avec R pour explorer l'expression
@@ -336,7 +388,7 @@ des gènes dans des échantillons de gencives de chats !
  
 <figure>
   <img src="../assets/images/evgeniya-shustikova-td3PkgUCQmc-unsplash.png" width="400"/>
-  <figcaption>Tu bâilles?! La bioinformatique t'ennuie ?</figcaption>
+  <figcaption>Tu bâilles ou tu as mal aux dents ?</figcaption>
 </figure>
 
 Il arrive que les chats souffrent de gingivite chronique. Cette maladie
@@ -407,6 +459,7 @@ dans notre figure d'ACP doivent être colorés selon les 3 maladies.
 Voici les étapes nécessaires dans R:
 
 ```r
+
 pca <- prcomp(t(genes_chat), scale. = TRUE, center = TRUE)$x
 pca <- as.data.frame(pca)
 
@@ -415,6 +468,7 @@ pca$condition<-sapply(strsplit(colnames(genes_chat), "_"), '[', 2)
 ggplot(pca, aes(x=PC1, y=PC2, colour = condition)) +
   geom_point() +
   geom_text_repel(label=rownames(pca))
+  
 ```
 
 <figure>
@@ -499,14 +553,15 @@ avec la gingivite chronique. Est-ce que le système immunitaire est dérèglé c
 Peut-être est-ce la raison de leur maladie.
 
 Il est possible de jouer avec les couleurs de la carte. Essayez de changer les couleurs
-en utilisant un des paramètres suivants dans l'instruction `heatmap`:    
+en utilisant un des paramètres suivants dans l'instruction `heatmap`, 
+en remplaçant `rainbow(50)` en une autre des options suivantes:    
 
-* `terrain.colors(50)`.  
 * `rainbow(50)`.  
+* `terrain.colors(50)`.  
 * `heat.colors(50)`.  
 * `topo.colors(50)`.   
-
 * `cm.colors(50)`.   
+* `hcl.colors(50)`.   
 
 Par exemple, utilisons les couleurs de l'arc-en-ciel:
 
